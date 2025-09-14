@@ -24,9 +24,7 @@
             hash = "sha256-kKntzVy95NXeph9ZQM1WvAPuNWGjutz1HNDW3UMDrtg=";
           };
           
-          extraPkgs = pkgs: with pkgs; [
-            # Add any additional packages your AppImage might need
-            # For example: libsecret, keytar, etc.
+          extraPkgs = pkgs: [
           ];
           
           extraInstallCommands = ''
@@ -50,7 +48,6 @@
           ${appName} = appimage;
         };
         
-        # Optional: Make it available as an app
         apps = {
           default = flake-utils.lib.mkApp {
             drv = appimage;
